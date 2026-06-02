@@ -73,10 +73,23 @@ export const industries: Industry[] = [
 ];
 
 export const testimonials = [
-  { quote: "Three banks passed. Credify placed $1.2M in nine days and the strategist stayed on through close. They read the business, not the score.", name: "Marcus D.", role: "GC, Commercial Construction", placed: "$1.2M placed" },
-  { quote: "We were net-60 and drowning. The AR line bridged the gap the same week. No credit pull, no theater.", name: "Priya S.", role: "Founder, Logistics", placed: "$450K AR line" },
-  { quote: "Every platform underwrote us by template and said no. One match here and the wire hit in four days.", name: "Aaron T.", role: "Owner, Multi-unit Restaurants", placed: "$2.1M placed" },
+  { quote: "Three banks passed. Credify placed $1.2M in nine days and the strategist stayed on through close. They read the business, not the score.", name: "Marcus Delgado", role: "GC, Commercial Construction", placed: "$1.2M placed", avatar: "https://randomuser.me/api/portraits/men/52.jpg" },
+  { quote: "We were net-60 and drowning. The AR line bridged the gap the same week. No credit pull, no theater.", name: "Priya Sharma", role: "Founder, Regional Logistics", placed: "$450K AR line", avatar: "https://randomuser.me/api/portraits/women/44.jpg" },
+  { quote: "Every platform underwrote us by template and said no. One match here and the wire hit in four days.", name: "Aaron Tillman", role: "Owner, Multi-unit Restaurants", placed: "$2.1M placed", avatar: "https://randomuser.me/api/portraits/men/76.jpg" },
 ];
+
+const img = (id: string) => `https://images.unsplash.com/${id}?q=80&w=1200&auto=format&fit=crop`;
+
+// What your capital unlocks — the aspirational outcomes (financial freedom)
+export const unlocks = [
+  { title: "Open the second location", body: "The lease is sitting on your desk. The build-out quote is real. We fund the expansion banks call premature.", image: img("photo-1517248135467-4c7edcad34c4") },
+  { title: "Close the building", body: "Bridge capital that moves on the seller's timeline, not a 60-day underwriting queue. Same-week wires.", image: img("photo-1480714378408-67cf0d13bc1b") },
+  { title: "Take the job that's too big", body: "Win the contract your balance sheet can't cover yet. We fund the mobilization, you grow into it.", image: img("photo-1503387762-592deb58ef4e") },
+  { title: "Keep the fleet moving", body: "Cover fuel, payroll, and the gap before the broker pays. Your wheels never stop on a cash-flow timing issue.", image: img("photo-1469854523086-cc02fe5d8800") },
+];
+
+export const ctaImage = img("photo-1469854523086-cc02fe5d8800");
+export const heroImage = "https://images.unsplash.com/photo-1554469384-e58fac16e23a?q=80&w=2400&auto=format&fit=crop";
 
 export const faqs = [
   { q: "What does the $100K minimum approval guarantee mean?", a: "Credify only accepts files we are confident we can place. Once a file is accepted onto the desk, we guarantee a minimum approval of $100,000 — that is the floor we underwrite to before we take you on." },

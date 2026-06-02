@@ -22,7 +22,7 @@ export default function ApplyPage() {
   return (
     <>
       <JsonLd data={breadcrumbSchema([{ name: "Home", path: "/" }, { name: "Apply", path: "/apply" }])} />
-      <section className="container-c grid gap-12 py-20 lg:grid-cols-[1fr_1.1fr]">
+      <section className="container-c grid gap-12 pb-20 pt-32 lg:grid-cols-[1fr_1.1fr]">
         <div>
           <p className="eyebrow">Strategy Call</p>
           <h1 className="mt-5 font-display text-4xl font-semibold leading-tight sm:text-5xl">

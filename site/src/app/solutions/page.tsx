@@ -22,7 +22,7 @@ export default function SolutionsPage() {
     <>
       <JsonLd data={breadcrumbSchema([{ name: "Home", path: "/" }, { name: "Solutions", path: "/solutions" }])} />
 
-      <section className="container-c py-20 sm:py-28">
+      <section className="container-c pb-16 pt-32 sm:pt-36">
         <p className="eyebrow">Industry Solutions · $100K Minimum Approval · Guaranteed</p>
         <h1 className="mt-5 max-w-3xl font-display text-5xl font-semibold leading-[1.04] tracking-tight sm:text-6xl">
           Capital built for <span className="emph">your</span> industry.
