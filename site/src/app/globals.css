@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+  }
+  body {
+    @apply bg-ink text-ivory font-sans antialiased;
+    background-image: radial-gradient(120% 80% at 50% -12%, rgba(92, 157, 196, 0.07), transparent 60%);
+    background-attachment: fixed;
+  }
+  /* Futuristic, wide, ALL-CAPS display titles (Bevon-alike); body stays normal/professional */
+  .font-display {
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  ::selection {
+    @apply bg-gold text-ink;
+  }
+  *:focus-visible {
+    @apply outline-none ring-2 ring-gold ring-offset-2 ring-offset-ink rounded-sm;
+  }
+}
+
+@layer components {
+  .container-c {
+    @apply mx-auto w-full max-w-content px-5 sm:px-8;
+  }
+  .eyebrow {
+    @apply text-xs font-medium uppercase tracking-[0.22em] text-gold;
+  }
+  .emph {
+    @apply font-display font-bold text-gold-hi;
+  }
+  .card {
+    @apply rounded-card border border-line bg-ink-2;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition-colors;
+  }
+  .btn-primary {
+    @apply btn bg-gold text-ink hover:bg-gold-hi;
+  }
+  .btn-ghost {
+    @apply btn border border-line text-ivory hover:border-gold/60 hover:text-gold-hi;
+  }
+  .hairline {
+    @apply border-t border-line;
+  }
+}

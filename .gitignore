@@ -1,0 +1,16 @@
+# dependencies / build
+node_modules/
+.next/
+out/
+
+# secrets & env
+.env*
+
+# firecrawl scrape cache + raw research dumps (synthesized into RESEARCH.md)
+.firecrawl/
+research/
+
+# os / misc
+.DS_Store
+*.tsbuildinfo
+next-env.d.ts
