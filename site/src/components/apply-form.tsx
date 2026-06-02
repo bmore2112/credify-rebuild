@@ -14,6 +14,10 @@ const steps = [
   { id: "03", label: "Your situation" },
 ];
 
+// One shared style so every box (input / select / textarea) matches exactly
+const INPUT_CLASS =
+  "w-full rounded-card border border-line bg-ink px-4 py-3 text-sm text-ivory outline-none transition-colors placeholder:text-ivory-muted focus:border-gold";
+
 export function ApplyForm() {
   const [step, setStep] = useState(0);
   const [done, setDone] = useState(false);
@@ -83,7 +87,7 @@ export function ApplyForm() {
           <p className="text-sm text-ivory-muted">A sentence or two on the deal, the timeline, the roadblock. We’ll tailor the call so we don’t waste your twenty minutes.</p>
           <label className="block">
             <span className="mb-1.5 block text-sm font-medium">Your situation <span className="text-ivory-muted">optional</span></span>
-            <textarea name="situation" rows={5} className="w-full rounded-card border border-line bg-ink px-4 py-3 text-sm outline-none focus:border-gold" />
+            <textarea name="situation" rows={5} className={`${INPUT_CLASS} resize-y`} />
           </label>
           <p className="text-xs text-ivory-muted">🔒 Encrypted · No credit pull</p>
         </fieldset>
@@ -115,7 +119,7 @@ function Field({ label, hint, required, ...props }: { label: string; hint?: stri
       <span className="mb-1.5 block text-sm font-medium">
         {label} {required ? <span className="text-gold">*</span> : <span className="text-ivory-muted">{hint}</span>}
       </span>
-      <input id={id} required={required} {...props} className="w-full rounded-card border border-line bg-ink px-4 py-3 text-sm outline-none focus:border-gold" />
+      <input id={id} required={required} {...props} className={INPUT_CLASS} />
     </label>
   );
 }
@@ -124,10 +128,19 @@ function Select({ label, hint, name, options, placeholder }: { label: string; hi
   return (
     <label htmlFor={name} className="block">
       <span className="mb-1.5 block text-sm font-medium">{label} <span className="text-ivory-muted">{hint}</span></span>
-      <select id={name} name={name} defaultValue="" className="w-full rounded-card border border-line bg-ink px-4 py-3 text-sm outline-none focus:border-gold">
-        <option value="" disabled>{placeholder}</option>
-        {options.map((o) => <option key={o} value={o}>{o}</option>)}
-      </select>
+      <div className="relative">
+        <select id={name} name={name} defaultValue="" className={`${INPUT_CLASS} cursor-pointer appearance-none pr-11`}>
+          <option value="" disabled>{placeholder}</option>
+          {options.map((o) => <option key={o} value={o}>{o}</option>)}
+        </select>
+        <svg
+          aria-hidden
+          viewBox="0 0 12 12"
+          className="pointer-events-none absolute right-4 top-1/2 h-3 w-3 -translate-y-1/2 text-ivory-muted"
+        >
+          <path d="M2 4l4 4 4-4" stroke="currentColor" fill="none" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      </div>
     </label>
   );
 }
